@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit2_PS2_P3</title>
+
+</head>
+
+<body>
+
+<h1>Unit2_PS2_P3</h1>
+
+<div class="container">
+    <form action="#" method="get">
+
+      <label for="user_text">Input your name please:</label><br>
+      <input name="user_text" type="text" maxlength="512" id="user_text"/>
+      <br><br>
+
+      <input type="button" value="Hello" onclick="speak(Hello)">
+
+      <br><br>
+
+      <input type="button" value="Good Bye" onclick="speak(GoodBye)">
+
+      <br><br>
+
+      <input type="button" value="Greetings" onclick="speak(Greetings)">
+
+    </form>
+</div>
+<br><br>
+
+<script>
+
+    let Hello = "Hello "
+    let GoodBye = "Good Bye "
+    let Greetings = "Greetings "
+
+    function speak(prefix) {
+        let user_text = document.getElementById('user_text').value;
+        alert(prefix+user_text)
+    }
+</script>
+
+
+</body>
+
+
+
+</html>

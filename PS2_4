@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit2_PS2_P4</title>
+
+</head>
+
+<body>
+
+    <h1>Unit2_PS2_P4</h1>
+
+    <div class="container">
+        <form action="#" method="get">
+
+        <label for="user_text">Input your name please:</label><br>
+        <input name="user_text" type="text" maxlength="512" id="user_text"/>
+        <br><br>
+
+        <input type="button" id="hello" value="Hello">
+
+        <br><br>
+
+        <input type="button" id="goodbye" value="Good Bye">
+
+        <br><br>
+
+        <input type="button" id="greetings" value="Greetings">
+
+        </form>
+    </div>
+    <br><br>
+
+    <script>
+
+        window.onload = (event) => {
+
+            console.log("page is loaded test")
+
+            function speak() {
+                let user_text = document.getElementById('user_text').value;
+                let val = this.value;
+                alert(val + " " + user_text);
+            }
+
+            document.getElementById('hello').addEventListener("click", speak);
+            document.getElementById('goodbye').addEventListener("click", speak);
+            document.getElementById('greetings').addEventListener("click", speak);
+
+        };
+
+        </script>
+
+
+</body>
+
+
+
+</html>
