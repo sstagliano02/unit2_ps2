@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit2_PS2_P2</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+
+    <h1> Unit2_PS2_P2</h1>
+
+    <script>
+
+        let name_input = prompt("Give me a list of names separated by comma (example: Steve, Blake, Greg)");
+        const names = name_input.split(",");
+
+
+        document.write("Starting List of Names: "+ names + "<br>");
+
+        let l = "<ol>";
+
+        names.forEach((name) =>  {
+        l += "<li>" + name + "</li>";
+        });
+
+        l +=  "</0l>";
+
+        document.write("Names split and now in HTML list form:")
+        document.write (l)
+
+    </script>
+</body>
+</html>

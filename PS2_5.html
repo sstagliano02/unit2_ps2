@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Unit2_PS2_P5</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+    <h1>Unit2_PS2_P5</h1>
+
+    <h4>Pick a menu item, enter a desired quantity (1 - 100), and click Add to Order</h4>
+
+    <form action="#">
+        <label for="cars">Choose a menu item:</label>
+        <select id="food" name="food">
+
+        </select>
+
+    <br><br>
+
+        <label for="qty">How many do you want?</label><br>
+        <input name="qty" type="text" size="10" id="qty"/>
+
+        <input type="button" id="add" value="Add to Order" onclick="addorder(items, d, main_total)"/>
+
+    </form>
+
+    <h2>Display Area</h2>
+    <div id = "display"> </div>
+    <p id = "total">Total: </p>
+    <br><br>
+
+    <input type="button" id="restart" value="Start Over" onclick="restart()"/>
+
+    <script>
+
+        let d = "";
+        var main_total = 0;
+
+        document.getElementById("display").innerHTML = d;
+
+        const prices = [15, 8, 4, 2, 0.50];
+        const items = ["Lobster Roll", "Fried Clams", "French Fries", "Soda", "Dipping Sauce"];
+
+        function displayMenu() {
+
+            let s = ""
+
+            for (i=0; i< items.length; i++)
+            {
+                s += "<option value='" + i + "''>" + items[i] + "</option>"
+
+                document.getElementById("food").innerHTML = s
+            }
+        };
+
+        function addorder(menu, d, total) {
+            let qty = document.getElementById('qty').value;
+
+            if (isNaN(qty)) {
+                alert("Enter a number from 1 to 100");
+            } else if (Number(qty) > 100 || Number(qty) < 1 ) {
+                alert("Enter a number from 1 to 100");
+            } else {
+
+                let option = document.getElementById('food').value;
+                qty = Number(qty);
+
+                d += "<p>" + menu[option] + "&nbsp;&nbsp;&nbsp; Quantity: " + qty + " &nbsp;&nbsp;&nbsp; Price: &#36;" + qty * prices[option];
+                document.getElementById("display").innerHTML += d;
+
+
+                main_total += qty * prices[option];
+                document.getElementById("total").innerHTML = "Total: &#36;" + main_total;
+            }
+        };
+
+        function restart() {
+            document.getElementById("display").innerHTML = "";
+            main_total = 0;
+            document.getElementById("total").innerHTML = "Total: &#36;" + main_total;
+        }
+
+
+        displayMenu();
+
+
+    </script>
+
+</body>
+</html>
